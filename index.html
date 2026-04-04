@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>श्रीमान स्पेशल मटकी भेळ | जुन्नर</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;500;700;800&family=Poppins:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <style>
+      :root {
+        --white: #ffffff;
+        --almond: #fdfbf7;
+        --terracotta: #b91c1c;
+        --accent-gold: #f59e0b;
+        --glass-bg: rgba(255, 255, 255, 0.9);
+      }
+
+      body {
+        font-family: "Mukta", sans-serif;
+        background-color: var(--almond);
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      /* --- PROFESSIONAL ANIMATED HEADER --- */
+      .top-header {
+        background: linear-gradient(135deg, #b91c1c 0%, #8b0000 100%);
+        padding: 20px 0;
+        color: var(--white);
+        position: relative;
+        z-index: 1001;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border-bottom: 5px solid var(--accent-gold);
+      }
+
+      .header-logo {
+        height: 85px;
+        border-radius: 50%;
+        border: 3px solid var(--accent-gold);
+        transition: 0.5s ease;
+      }
+      .header-logo:hover {
+        transform: scale(1.1) rotate(360deg);
+      }
+
+      .header-tagline {
+        font-size: 19px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.95);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        margin-bottom: 5px;
+      }
+
+      .hotel-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 38px;
+        font-weight: 900;
+        color: var(--accent-gold);
+        letter-spacing: 2px;
+        margin: 0;
+        line-height: 1;
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+        animation: pulseTitle 2s infinite alternate;
+      }
+
+      @keyframes pulseTitle {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.04);
+        }
+      }
+
+      /* --- MODERN GLASS NAVBAR --- */
+      .navbar {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        padding: 12px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .nav-link {
+        font-weight: 800;
+        color: #333 !important;
+        font-size: 16px;
+        padding: 10px 25px !important;
+        margin: 0 5px;
+        border-radius: 50px;
+        transition: 0.4s;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: var(--terracotta) !important;
+        background: rgba(185, 28, 28, 0.08);
+        transform: translateY(-2px);
+      }
+
+      .nav-link.active {
+        background: var(--terracotta);
+        color: var(--white) !important;
+        box-shadow: 0 5px 15px rgba(185, 28, 28, 0.3);
+      }
+
+      /* --- FAST AUTO SLIDER --- */
+      .carousel-item {
+        height: 480px;
+      }
+      .carousel-item img {
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.8);
+      }
+      .carousel-caption {
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
+        padding: 25px;
+        bottom: 20%;
+        max-width: 500px;
+        margin: 0 auto;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* --- SECTION TITLES --- */
+      .section-title {
+        font-weight: 900;
+        color: var(--terracotta);
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 32px;
+      }
+      .section-title::after {
+        content: "";
+        width: 70px;
+        height: 5px;
+        background: var(--accent-gold);
+        display: block;
+        margin: 12px auto;
+        border-radius: 50px;
+      }
+
+      /* --- MENU CARDS --- */
+      .menu-card {
+        border: none;
+        border-radius: 25px;
+        background: var(--white);
+        overflow: hidden;
+        transition: 0.4s;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+      .menu-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 40px rgba(185, 28, 28, 0.12);
+      }
+      .menu-card img {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+      }
+      .card-body h5 {
+        font-weight: 800;
+        text-align: center;
+        color: #333;
+        margin: 0;
+      }
+
+      /* --- PREMIUM LOW OPACITY FOOTER --- */
+      footer {
+        background: linear-gradient(
+          rgba(185, 28, 28, 0.88),
+          rgba(139, 0, 0, 0.88)
+        );
+        backdrop-filter: blur(8px);
+        color: #ffdada;
+        padding: 60px 0 30px;
+        border-top: 5px solid var(--accent-gold);
+        margin-top: 60px;
+      }
+      .footer-brand {
+        font-size: 28px;
+        color: var(--accent-gold);
+        font-weight: 900;
+      }
+
+      /* Floating WhatsApp */
+      .wa-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #25d366;
+        color: white;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 35px;
+        z-index: 1000;
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .wa-float:hover {
+        transform: scale(1.1) rotate(15deg);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="animate__animated animate__fadeInLeft">
+          <img src="shivaji.png" alt="शिवाजी महाराज" class="header-logo" />
+        </div>
+        <div class="text-center">
+          <div class="header-tagline animate__animated animate__fadeInDown">
+            शिवजन्मभूमी जुन्नर येथील स्पेशल पुणेरी मिसळ
+          </div>
+          <h1 class="hotel-title animate__animated animate__zoomIn">श्रीमान</h1>
+        </div>
+        <div class="animate__animated animate__fadeInRight">
+          <img src="logo.png" alt="श्रीमान लोगो" class="header-logo" />
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <button
+          class="navbar-toggler ms-auto border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">होम</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">मेनू कार्ड</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">आमच्याबद्दल</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="location.html">लोकेशन</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      id="heroSlider"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="2500"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="dish1.jpg" class="d-block w-100" alt="मटकी भेळ" />
+          <div class="carousel-caption animate__animated animate__fadeInUp">
+            <h3 class="fw-bold">स्पेशल मटकी भेळ</h3>
+            <p>जुन्नरची अस्सल चव, आता नव्या अंदाजात!</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="dish2.jpg" class="d-block w-100" alt="मिसळ पाव" />
+          <div class="carousel-caption"><h3>झणझणीत पुणेरी मिसळ</h3></div>
+        </div>
+        <div class="carousel-item">
+          <img src="dish3.jpg" class="d-block w-100" alt="वडापाव" />
+          <div class="carousel-caption"><h3>स्पेशल पुणेरी वडापाव</h3></div>
+        </div>
+        <div class="carousel-item">
+          <img src="dish7.jpg" class="d-block w-100" alt="पोहे" />
+          <div class="carousel-caption"><h3>ताजे कांदा पोहे</h3></div>
+        </div>
+        <div class="carousel-item">
+          <img src="dish8.jpg" class="d-block w-100" alt="साबुदाणा वडा" />
+          <div class="carousel-caption"><h3>गरमागरम साबुदाणा वडा</h3></div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#heroSlider"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#heroSlider"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <section class="py-5">
+      <div class="container">
+        <h2 class="section-title">🔥 आमचे लोकप्रिय पदार्थ</h2>
+        <div class="row g-4 text-center">
+          <div class="col-6 col-md-3">
+            <div class="card menu-card">
+              <img src="dish1.jpg" alt="मटकी भेळ" />
+              <div class="card-body"><h5>मटकी भेळ</h5></div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card menu-card">
+              <img src="dish2.jpg" alt="मिसळ पाव" />
+              <div class="card-body"><h5>मिसळ पाव</h5></div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card menu-card">
+              <img src="dish3.jpg" alt="वडापाव" />
+              <div class="card-body"><h5>वडापाव</h5></div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card menu-card">
+              <img src="dish4.jpg" alt="भजी" />
+              <div class="card-body"><h5>बटाटा भजी</h5></div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a
+            href="menu.html"
+            class="btn btn-danger btn-lg rounded-pill px-5 fw-bold shadow"
+            >पूर्ण मेनू पहा</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container text-center text-md-start">
+        <div class="row g-5">
+          <div class="col-md-4">
+            <div class="footer-brand mb-3">श्रीमान</div>
+            <p class="opacity-75">
+              शिवजन्मभूमी जुन्नरची अस्सल चव आता तुमच्या शहरात. ताजे पदार्थ आणि
+              उत्तम चव हीच आमची ओळख.
+            </p>
+          </div>
+          <div class="col-md-4 text-md-center">
+            <h5 class="text-white fw-bold mb-4">महत्वाचे</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="menu.html" class="text-decoration-none text-muted"
+                  >मेनू</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="about.html" class="text-decoration-none text-muted"
+                  >आमच्याबद्दल</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="location.html" class="text-decoration-none text-muted"
+                  >लोकेशन</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <h5 class="text-white fw-bold mb-4">संपर्क</h5>
+            <p class="mb-1">
+              <i class="fas fa-phone-alt me-2 text-warning"></i> +91 7276350026
+            </p>
+            <p>
+              <i class="fas fa-map-marker-alt me-2 text-warning"></i> जुन्नर,
+              पुणे (महाराष्ट्र)
+            </p>
+          </div>
+        </div>
+        <hr class="my-5 opacity-25" />
+        <p class="text-center small opacity-50 mb-0">
+          © 2026 श्रीमान स्पेशल मटकी भेळ | सर्व हक्क राखीव.
+        </p>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/917276350026" class="wa-float" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

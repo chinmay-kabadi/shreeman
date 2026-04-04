@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>लोकेशन | श्रीमान स्पेशल मटकी भेळ</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700;800&family=Poppins:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <style>
+      :root {
+        --primary-red: #8b0000;
+        --accent-gold: #ffd700;
+        --deep-orange: #ff6600;
+        --white: #ffffff;
+        --glass: rgba(255, 255, 255, 0.15);
+      }
+
+      body {
+        margin: 0;
+        font-family: "Mukta", sans-serif;
+        background: linear-gradient(-45deg, #fff2cc, #ffe0b3, #ffd699, #fff2cc);
+        background-size: 400% 400%;
+        animation: bgMove 12s infinite alternate;
+        color: #333;
+      }
+
+      @keyframes bgMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+
+      /* --- HEADER --- */
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-red),
+          var(--deep-orange)
+        );
+        color: var(--white);
+        padding: 50px 20px;
+        border-bottom: 5px solid var(--accent-gold);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      }
+
+      .header h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 42px;
+        font-weight: 900;
+        color: var(--accent-gold);
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .home-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 30px;
+        background: var(--white);
+        color: var(--primary-red);
+        font-weight: 800;
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        transition: 0.4s;
+      }
+      .home-btn:hover {
+        transform: scale(1.1);
+        background: var(--accent-gold);
+        color: #000;
+      }
+
+      /* --- MAP CARD --- */
+      .map-card {
+        width: 92%;
+        max-width: 1100px;
+        margin: -40px auto 40px;
+        background: var(--white);
+        padding: 15px;
+        border-radius: 30px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      iframe {
+        width: 100%;
+        height: 400px;
+        border-radius: 20px;
+        border: 0;
+      }
+
+      /* --- ADDRESS BOX --- */
+      .address-box {
+        max-width: 800px;
+        margin: 40px auto;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(15px);
+        padding: 40px;
+        border-radius: 30px;
+        border: 2px solid var(--white);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .address-box h3 {
+        color: var(--primary-red);
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
+      .address-box p {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.6;
+      }
+
+      /* --- BUTTONS --- */
+      .action-btns {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+      }
+
+      .btn-modern {
+        padding: 15px 35px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 18px;
+        color: white;
+        text-decoration: none;
+        transition: 0.4s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-modern:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+
+      .bg-maps {
+        background: linear-gradient(45deg, #4285f4, #34a853);
+      }
+      .bg-call {
+        background: linear-gradient(45deg, #b91c1c, #ff6b6b);
+      }
+      .bg-wa {
+        background: linear-gradient(45deg, #25d366, #128c7e);
+      }
+
+      /* --- REVIEW SLIDER --- */
+      .review-section {
+        padding: 60px 0;
+        background: rgba(139, 0, 0, 0.05);
+      }
+      .review-card {
+        max-width: 750px;
+        margin: 0 auto;
+        background: var(--white);
+        padding: 40px;
+        border-radius: 40px;
+        position: relative;
+        box-shadow: 0 15px 40px rgba(139, 0, 0, 0.1);
+      }
+
+      .quote-icon {
+        font-size: 50px;
+        color: var(--accent-gold);
+        opacity: 0.5;
+        margin-bottom: 20px;
+      }
+      .review-text {
+        font-size: 22px;
+        font-weight: 700;
+        font-style: italic;
+        color: #444;
+      }
+      .reviewer-name {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--deep-orange);
+        margin-top: 15px;
+      }
+
+      /* --- ORIGINAL FOOTER --- */
+      footer {
+        background: #1c1616;
+        color: white;
+        padding: 30px;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      .fade-in {
+        animation: fadeInUp 1s both;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header animate__animated animate__fadeInDown">
+      <h1><i class="fas fa-map-marker-alt me-2"></i> आमचे लोकेशन</h1>
+      <p class="fs-4 fw-bold">श्रीमान स्पेशल मटकी भेळ - अस्सल चवीचे ठिकाण</p>
+      <a href="index.html" class="home-btn shadow"
+        ><i class="fas fa-home me-2"></i> मुख्य पान</a
+      >
+    </div>
+
+    <div class="map-card animate__animated animate__zoomIn">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.893123456789!2d73.0890123456789!3d19.21345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDEyJzQ4LjQiTiA3M8KwMDUnMjAuNCJF!5e0!3m2!1sen!2sin!4v1234567890123"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <div class="address-box reveal fade-in">
+      <h3><i class="fas fa-store me-2"></i> पत्ता</h3>
+      <p>
+        Citi Mall, Near Pendarkar College,<br />
+        Next to Maruti Showroom, MIDC,<br />
+        Dombivli East, Maharashtra 421203
+      </p>
+      <hr class="my-4 opacity-25" />
+      <p class="text-danger fs-3">
+        <i class="fas fa-phone-alt me-2"></i> 7276350026
+      </p>
+    </div>
+
+    <div class="action-btns container">
+      <a
+        href="https://maps.app.goo.gl/YourMapLink"
+        class="btn-modern bg-maps animate__animated animate__fadeInLeft"
+        target="_blank"
+      >
+        <i class="fas fa-directions"></i> Direction
+      </a>
+      <a
+        href="tel:7276350026"
+        class="btn-modern bg-call animate__animated animate__fadeInUp"
+      >
+        <i class="fas fa-phone-alt"></i> Call Now
+      </a>
+      <a
+        href="https://wa.me/917276350026"
+        class="btn-modern bg-wa animate__animated animate__fadeInRight"
+        target="_blank"
+      >
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+
+    <section class="review-section">
+      <div class="container text-center">
+        <h2 class="mb-5 fw-bold" style="color: var(--primary-red)">
+          ⭐ ग्राहकांचे प्रेम
+        </h2>
+
+        <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="review-card">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p class="review-text">
+                  "मटकी भेळ खूपच टेस्टी! डोबिंवलीतली बेस्ट टेस्ट. पुन्हा नक्की
+                  येणार."
+                </p>
+                <h4 class="reviewer-name">– राहुल पाटील</h4>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="review-card">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p class="review-text">
+                  "झणझणीत मिसळ आणि खूप चांगली सर्विस. हायजीनची पूर्ण काळजी घेतली
+                  जाते."
+                </p>
+                <h4 class="reviewer-name">– पूजा शिंदे</h4>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="review-card">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p class="review-text">
+                  "फास्ट सर्विस आणि 5 स्टार टेस्ट! कांदा पोहे तर अफलातून आहेत."
+                </p>
+                <h4 class="reviewer-name">– अमोल देशमुख</h4>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#reviewCarousel"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon bg-dark rounded-circle"
+            ></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#reviewCarousel"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon bg-dark rounded-circle"
+            ></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 श्रीमान स्पेशल मटकी भेळ | सर्व हक्क राखीव</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

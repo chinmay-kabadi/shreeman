@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>यशोगाथा | श्रीमान स्पेशल मटकी भेळ</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700;800&family=Poppins:wght@600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <style>
+      :root {
+        --primary-red: #8b0000;
+        --accent-gold: #ffd700;
+        --deep-orange: #ff6600;
+        --white: #ffffff;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Mukta", sans-serif;
+        background-color: #fffaf7;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* --- 🌟 CLEAN HEADER (NO OVERLAP) --- */
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-red),
+          var(--deep-orange)
+        );
+        color: var(--white);
+        padding: 60px 20px;
+        border-bottom: 5px solid var(--accent-gold);
+        text-align: center;
+      }
+
+      .header h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(35px, 8vw, 55px);
+        font-weight: 900;
+        color: var(--accent-gold);
+        text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      /* --- 🚀 CLEAN PROFILE SECTION --- */
+      .profile-section {
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .owner-img-wrapper {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 25px;
+        padding: 10px;
+        background: linear-gradient(
+          45deg,
+          var(--deep-orange),
+          var(--accent-gold)
+        );
+        border-radius: 50%;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .owner-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid white;
+      }
+
+      .owner-info h2 {
+        font-weight: 800;
+        color: var(--primary-red);
+        font-size: 38px;
+        margin-bottom: 5px;
+      }
+
+      /* --- STORY ROWS --- */
+      .story-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 80px;
+        gap: 50px;
+        padding: 20px;
+        background: white;
+        border-radius: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .story-image {
+        flex: 1;
+      }
+      .story-image img,
+      .carousel {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 10px 10px 0px var(--accent-gold);
+      }
+
+      .story-info {
+        flex: 1.2;
+        padding: 20px;
+      }
+      .story-info h2 {
+        font-weight: 800;
+        color: var(--primary-red);
+        font-size: 32px;
+        margin-bottom: 15px;
+      }
+      .story-info p {
+        font-size: 20px;
+        line-height: 1.7;
+        color: #444;
+      }
+
+      /* Gold Quote */
+      .gold-quote {
+        background: linear-gradient(135deg, var(--accent-gold), #ffcc00);
+        padding: 40px;
+        border-radius: 30px;
+        text-align: center;
+        margin: 60px 0;
+        box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+      }
+
+      .btn-home-final {
+        display: inline-block;
+        padding: 15px 45px;
+        background: var(--primary-red);
+        color: white;
+        font-weight: 800;
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: 0 10px 25px rgba(139, 0, 0, 0.3);
+        transition: 0.4s;
+        font-size: 20px;
+      }
+      .btn-home-final:hover {
+        transform: scale(1.05);
+        background: var(--deep-orange);
+        color: white;
+      }
+
+      /* --- 🚩 FOOTER (PURE BLACK) --- */
+      footer {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 30px;
+        font-size: 16px;
+        border-top: 5px solid var(--accent-gold);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: 0.8s ease;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 992px) {
+        .story-row {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1 class="animate__animated animate__fadeInDown">
+        <i class="fas fa-history me-3"></i> आमची यशोगाथा
+      </h1>
+      <p class="fs-4 fw-bold mt-2" style="color: rgba(255, 255, 255, 0.9)">
+        शून्यातून विश्व निर्माण करणारा प्रवास!
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="profile-section reveal">
+        <div class="owner-img-wrapper">
+          <img src="owner.jpg" alt="हनुमंत शिवाजी बांगर" />
+        </div>
+        <div class="owner-info">
+          <h2>हनुमंत शिवाजी बांगर</h2>
+          <p class="text-muted fw-bold fs-5">Founder – श्रीमान</p>
+        </div>
+      </div>
+
+      <div class="story-row reveal">
+        <div class="story-image">
+          <img src="dish11111.jpg" alt="शिवनेरी किल्ला" />
+        </div>
+        <div class="story-info">
+          <h2>एक स्वप्न, एक धाडस...</h2>
+          <p>
+            शिवजन्मभूमी जुन्नरची अस्सल चव शहरात आणण्याचं स्वप्न हनुमंत सरांनी
+            उराशी बाळगलं. नोकरी करत असतानाच मनात एक ओढ होती —
+            <strong>स्वतःचा ब्रँड उभा करण्याची.</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="story-row flex-lg-row-reverse reveal">
+        <div class="story-image">
+          <div
+            id="dishSlide"
+            class="carousel slide carousel-fade"
+            data-bs-ride="carousel"
+            data-bs-interval="2500"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="dish1.jpg"
+                  class="d-block w-100"
+                  style="height: 300px; object-fit: cover; border-radius: 20px"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="dish2.jpg"
+                  class="d-block w-100"
+                  style="height: 300px; object-fit: cover; border-radius: 20px"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="dish3.jpg"
+                  class="d-block w-100"
+                  style="height: 300px; object-fit: cover; border-radius: 20px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="story-info">
+          <h2>शून्यातून विश्व!</h2>
+          <p>
+            सुरक्षित नोकरी सोडणं सोपं नव्हतं, पण जोखीम घेतल्याशिवाय यश मिळत
+            नाही. अपार मेहनत आणि जिद्दीने <strong>"श्रीमान"</strong> चा पाया
+            रचला गेला.
+          </p>
+        </div>
+      </div>
+
+      <div class="gold-quote reveal">
+        <h3 class="m-0">
+          "स्वप्न मोठं असेल तर धोका घ्यायलाच लागतो, तरच यशाची चव चाखता येते!"
+        </h3>
+      </div>
+
+      <div class="text-center mb-5 reveal">
+        <a href="index.html" class="btn-home-final shadow-lg">
+          <i class="fas fa-home me-2"></i> मुख्य पान
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <p class="mb-0 opacity-75">© 2026 श्रीमान | सर्व हक्क राखीव</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          if (elementTop < windowHeight - 100) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      window.addEventListener("load", reveal);
+    </script>
+  </body>
+</html>
